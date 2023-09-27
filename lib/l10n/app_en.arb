@@ -1,0 +1,18 @@
+{
+  "search": "Search...",
+  "login": "Login",
+  "register": "Register",
+  "auth_page": "Authentication \nPage",
+  "password": "Password",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "description": "Description",
+  "upload": "Upload",
+  "add_page": "Add Story Page",
+  "story_page": "Story Page",
+  "logout": "Logout",
+  "success_login": "Login Success",
+  "logout_allert": "Are you sure logout?",
+  "yes": "yes",
+  "warning": "Warning"
+}

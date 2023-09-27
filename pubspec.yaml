@@ -1,0 +1,31 @@
+name: story_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+dependencies:
+  art_sweetalert: ^0.0.5
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.1
+  fluttertoast: ^8.2.2
+  http: ^1.1.0
+  image_picker: ^1.0.4
+  provider: ^6.0.5
+  shared_preferences: ^2.2.1
+  shimmer: ^3.0.0
+  app_settings: 
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  generate: true
+  uses-material-design: true

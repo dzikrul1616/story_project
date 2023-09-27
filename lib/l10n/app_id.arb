@@ -1,0 +1,18 @@
+{
+  "search": "Cari...",
+  "login": "Masuk",
+  "register": "Daftar",
+  "auth_page": "Halaman \nOtentikasi",
+  "password": "Kata Sandi",
+  "camera": "Kamera",
+  "gallery": "Galeri",
+  "description": "Deskripsi",
+  "upload": "Unggah",
+  "add_page": "Halaman Tambah Cerita",
+  "story_page": "Halaman Cerita",
+  "logout": "Keluar",
+  "success_login": "Anda berhasil login",
+  "logout_allert": "Apakah anda yakin ingin keluar?",
+  "yes": "ya",
+  "warning": "Peringatan"
+}
