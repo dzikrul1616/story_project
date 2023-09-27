@@ -14,5 +14,6 @@
   "success_login": "Login Success",
   "logout_allert": "Are you sure logout?",
   "yes": "yes",
-  "warning": "Warning"
+  "warning": "Warning",
+  "close": "Close"
 }

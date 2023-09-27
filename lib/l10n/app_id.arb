@@ -14,5 +14,6 @@
   "success_login": "Anda berhasil login",
   "logout_allert": "Apakah anda yakin ingin keluar?",
   "yes": "ya",
-  "warning": "Peringatan"
+  "warning": "Peringatan",
+  "close": "Tutup"
 }

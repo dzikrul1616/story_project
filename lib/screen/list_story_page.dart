@@ -105,102 +105,118 @@ class StoryListPage extends StatelessWidget {
                                     final data = value.filteredStory[index];
                                     return Padding(
                                       padding: const EdgeInsets.all(10),
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.grey[200],
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: 100,
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                child: Image.network(
-                                                  data['photoUrl'],
-                                                  fit: BoxFit.cover,
+                                      child: InkWell(
+                                        onTap: () => value.recomendationDetail(
+                                            context,
+                                            data['photoUrl'],
+                                            data['name'],
+                                            data['description'],
+                                            value.convertToTimeAgo(
+                                                data['createdAt']),
+                                            data['lat'] == null
+                                                ? 'no latitude, '
+                                                : '${data['lat'].toString()}',
+                                            data['lon'] == null
+                                                ? 'no longitude'
+                                                : '${data['lon'].toString()}'),
+                                        child: Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Colors.grey[200],
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: 100,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  child: Image.network(
+                                                    data['photoUrl'],
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.all(10),
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'by : ${data['name']}',
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        fontWeight:
-                                                            FontWeight.w300),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 5.0,
-                                                  ),
-                                                  Text(
-                                                    data['description'],
-                                                    style: TextStyle(
-                                                        fontSize: 14.0,
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Icon(Icons.location_pin,
-                                                          size: 10,
-                                                          color: Colors.grey),
-                                                      const SizedBox(
-                                                        width: 5.0,
-                                                      ),
-                                                      Text(
-                                                        data['lat'] == null
-                                                            ? 'no latitude, '
-                                                            : '${data['lat'].toString()}, ',
-                                                        style: TextStyle(
-                                                          fontSize: 10,
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(10),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'by : ${data['name']}',
+                                                      style: TextStyle(
+                                                          fontSize: 12.0,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5.0,
+                                                    ),
+                                                    Text(
+                                                      data['description'],
+                                                      style: TextStyle(
+                                                          fontSize: 14.0,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Icon(Icons.location_pin,
+                                                            size: 10,
+                                                            color: Colors.grey),
+                                                        const SizedBox(
+                                                          width: 5.0,
                                                         ),
-                                                      ),
-                                                      Text(
-                                                        data['lon'] == null
-                                                            ? 'no longitude'
-                                                            : data['lon']
-                                                                .toString(),
-                                                        style: TextStyle(
-                                                          fontSize: 10,
+                                                        Text(
+                                                          data['lat'] == null
+                                                              ? 'no latitude, '
+                                                              : '${data['lat'].toString()}, ',
+                                                          style: TextStyle(
+                                                            fontSize: 10,
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 5.0,
-                                                  ),
-                                                  Text(
-                                                    value.convertToTimeAgo(
-                                                        data['createdAt']),
-                                                    style: TextStyle(
-                                                        fontSize: 12.0,
-                                                        fontWeight:
-                                                            FontWeight.w300),
-                                                  ),
-                                                ],
-                                              ),
-                                            )
-                                          ],
+                                                        Text(
+                                                          data['lon'] == null
+                                                              ? 'no longitude'
+                                                              : data['lon']
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                            fontSize: 10,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5.0,
+                                                    ),
+                                                    Text(
+                                                      value.convertToTimeAgo(
+                                                          data['createdAt']),
+                                                      style: TextStyle(
+                                                          fontSize: 12.0,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     );

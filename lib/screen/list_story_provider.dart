@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:story_app/config/api.dart';
+import 'package:story_app/reusable/bottom_sheet.dart';
 import 'package:story_app/screen/authentication_page.dart';
 import 'package:art_sweetalert/art_sweetalert.dart';
 import 'package:http/http.dart' as http;
@@ -129,5 +130,32 @@ class ListStoryProvider extends ChangeNotifier {
       final format = DateFormat('dd MMM yyyy');
       return format.format(createdDateTime);
     }
+  }
+
+  void recomendationDetail(
+      context, image, user, description, createdAt, lat, long) async {
+    double height = MediaQuery.of(context).size.height * 0.8;
+    bool confirm = false;
+    await showModalBottomSheet<void>(
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context) {
+          return ClipRRect(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            child: Container(
+                height: height,
+                color: Colors.white,
+                child: BottomSheetPage(
+                  image: image,
+                  user: user,
+                  description: description,
+                  createdAt: createdAt,
+                  lat: lat,
+                  long: long,
+                )),
+          );
+        });
   }
 }
